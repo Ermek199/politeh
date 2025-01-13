@@ -16,7 +16,7 @@ function FirstStep() {
   return (
     <>
       <Div
-        pos="absolute"
+        pos="relative"
         d="flex"
         flexDir="column"
         bg="rgba(4, 11, 21, 1)"
