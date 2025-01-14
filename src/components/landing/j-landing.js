@@ -5,6 +5,7 @@ import Container3 from "../../assets/image-svg/Container3.svg";
 import Tess from "../../assets/image-svg/tess.svg.svg";
 import Google from "../../assets/image-svg/google.svg";
 import Appstor from "../../assets/image-svg/appstore.svg";
+import Footer from "../landing/k-landing";
 
 const SpanImages = () => {
   return (
@@ -136,10 +137,12 @@ const SpanImages = () => {
       <Div
         d="flex"
         flexDir="column"
+        align='center'
         pos="relative"
         bg="rgba(4, 11, 21, 1)"
         w="1440px"
         h="838px"
+        style={{gap:'40px'}}
       >
         <Div d="flex" pos="relative" justify="center" style={{ gap: "90px" }}>
           <Div d="flex" pos="relative" flexDir="column" style={{ gap: "20px" }}>
@@ -183,7 +186,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               ПРОДУКТЫ
             </Text>
@@ -194,7 +196,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Быстрый обмен
             </Text>
@@ -205,7 +206,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Торговля с плечом
             </Text>
@@ -216,7 +216,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Спотовая торговля
             </Text>
@@ -236,7 +235,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               ТЕРМИНАЛ
             </Text>
@@ -247,7 +245,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Web
             </Text>
@@ -258,7 +255,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Windows
             </Text>
@@ -269,7 +265,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Android
             </Text>
@@ -280,7 +275,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               iOS
             </Text>
@@ -300,7 +294,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               О НАС
             </Text>
@@ -311,7 +304,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Рынки
             </Text>
@@ -322,7 +314,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Поддержка
             </Text>
@@ -333,7 +324,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               FAQ
             </Text>
@@ -344,7 +334,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Комиссии
             </Text>
@@ -355,7 +344,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               Блог
             </Text>
@@ -375,7 +363,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               API
             </Text>
@@ -386,7 +373,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               WebREST API
             </Text>
@@ -397,7 +383,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               WebSocket Feed API
             </Text>
@@ -408,7 +393,6 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               WebSocket Trade API
             </Text>
@@ -419,12 +403,12 @@ const SpanImages = () => {
               textColor="white"
               textSize="16px"
               hoverTextColor="info700"
-
             >
               FIX API
             </Text>
           </Div>
         </Div>
+        <Footer />
       </Div>
     </>
   );
