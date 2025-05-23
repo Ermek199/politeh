@@ -15,7 +15,7 @@ const Manager = () => {
 
   return (
     <Div bg="white" d="flex" flexDir="column">
-      <BottomPanelManager/>
+      <BottomPanelManager />
       <Div
         w="100%"
         h="63px"
@@ -45,20 +45,6 @@ const Manager = () => {
               handleOpen("WRITE_OFF_APPROVAL", "Согласование списаний")
             }
           >
-           Остаток на складе
-          </Button>
-
-          <Button
-            h="40px"
-            textSize="body"
-            p={{ x: "1rem" }}
-            align="center"
-            justify="center"
-            bg="white"
-            textColor="black"
-            hoverBg="#3477D52E"
-            onClick={() => handleOpen("ORDER_APPROVAL", "Согласование заказов")}
-          >
             Согласование заказов
           </Button>
 
@@ -71,9 +57,9 @@ const Manager = () => {
             bg="white"
             textColor="black"
             hoverBg="#3477D52E"
-            onClick={() => handleOpen("LIMITS", "Лимиты")}
+            onClick={() => handleOpen("CREATE_PRODUCTS")}
           >
-            Лимиты
+            Создание товара
           </Button>
 
           <Button
@@ -85,7 +71,21 @@ const Manager = () => {
             bg="white"
             textColor="black"
             hoverBg="#3477D52E"
-            onClick={() => handleOpen("STORE_STOCKS", "Остаток в магазине")}
+            onClick={() => handleOpen("DEPO_STOCKS", "Остаток на складе")}
+          >
+            Остаток на складе
+          </Button>
+
+          <Button
+            h="40px"
+            textSize="body"
+            p={{ x: "1rem" }}
+            align="center"
+            justify="center"
+            bg="white"
+            textColor="black"
+            hoverBg="#3477D52E"
+            onClick={() => handleOpen("STOCKS", "Остаток в магазине")}
           >
             Остаток в магазине
           </Button>

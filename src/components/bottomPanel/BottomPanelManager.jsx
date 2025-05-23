@@ -3,18 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { Div, Text, Icon } from "atomize";
 import { closeModal } from "../redux/actions/modalActions";
 
+import WriteOffApprovalPanel from "./panels-manager/WriteOffApprovalPanel";
+import CreateProductsPanel from "./panels-manager/CreateProductsPanel";
+import DepoStocksPanel from "./panels-manager/DepoStocksPanel";
 import StockPanel from "./Panels/StockPanel";
 
-// Заглушки для остальных панелей
-const WriteOffApproval = () => <Text>Write Off Panel</Text>;
-const OrderApproval = () => <Text>Order Approval Panel</Text>;
-const Limits = () => <Text>Limits Panel</Text>;
-
 const PANEL_COMPONENTS1 = {
-  WRITE_OFF_APPROVAL: WriteOffApproval,
-  ORDER_APPROVAL: OrderApproval,
-  LIMITS: Limits,
-  STORE_STOCKS: StockPanel,
+  WRITE_OFF_APPROVAL: WriteOffApprovalPanel,
+  CREATE_PRODUCTS: CreateProductsPanel,
+  DEPO_STOCKS: DepoStocksPanel,
+  STOCKS: StockPanel,
 };
 
 const BottomPanelManager = () => {
