@@ -6,6 +6,8 @@ import orderReducer from "../components/redux/reducers/orderReducer"
 import stockReducer from '../components/redux/reducers/stockReducer';
 import operationHistoryReducer from '../components/redux/reducers/operationHistoryReducer';
 import productsReducer from '../components/redux/reducers/productsReducer';
+import depoStockReducer from '../components/redux/reducers/depoStockReducer';
+import {writeOffRequestsReducer} from '../components/redux/reducers/writeOffRequestsReducer';
 
 const rootReducer = combineReducers({
   modal: modalReducer,
@@ -15,6 +17,8 @@ const rootReducer = combineReducers({
   stock: stockReducer,
   products: productsReducer,
   operationHistory: operationHistoryReducer,
+  depoStock: depoStockReducer,
+  writeOffRequests: writeOffRequestsReducer,
 });
 
 export const store = createStore(

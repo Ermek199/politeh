@@ -1,7 +1,7 @@
-export const SET_STOCK = 'SET_STOCK';
-export const ADD_STOCK_ITEM = 'ADD_STOCK_ITEM';
-export const UPDATE_STOCK_ITEM_QUANTITY = 'UPDATE_STOCK_ITEM_QUANTITY';
-export const CLEAR_STOCK = 'CLEAR_STOCK';
+export const SET_STOCK = "SET_STOCK";
+export const ADD_STOCK_ITEM = "ADD_STOCK_ITEM";
+export const UPDATE_STOCK_ITEM_QUANTITY = "UPDATE_STOCK_ITEM_QUANTITY";
+export const CLEAR_STOCK = "CLEAR_STOCK";
 
 // Загрузить все остатки
 export const setStock = (items) => ({

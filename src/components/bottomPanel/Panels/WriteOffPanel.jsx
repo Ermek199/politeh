@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Div, Text, Input, Button } from "atomize";
-import { addOperation } from "../../redux/actions/operationActions"; // убедись, что путь правильный
+import { addOperation } from "../../redux/actions/operationActions"; 
+import { addWriteOffRequest } from "../../redux/actions/writeOffRequestsActions";
+import { clearWriteOff } from "../../redux/actions/writeOffActions";
 
 const sampleGoods = [
   {
@@ -83,49 +85,55 @@ const WriteOffPanel = () => {
       alert("Выберите хотя бы один товар для списания");
       return;
     }
-
+  
     for (const item of selectedItems) {
       const qty = writeOffQuantities[item.id];
       if (!qty || Number(qty) === 0) {
-        alert(
-          `Введите корректное количество списания для товара "${item.name}"`
-        );
+        alert(`Введите корректное количество списания для товара "${item.name}"`);
         return;
       }
       if (Number(qty) > item.expected) {
-        alert(
-          `Нельзя списать больше, чем есть на складе для товара "${item.name}"`
-        );
+        alert(`Нельзя списать больше, чем есть на складе для товара "${item.name}"`);
         return;
       }
     }
-
-    // Добавим операции в историю
+  
+    // Создаём заявку на списание
+    const newRequest = {
+      id: Date.now(), // уникальный ID
+      timestamp: new Date().toLocaleString(),
+      user: user,
+      items: selectedItems.map((item) => ({
+        id: item.id,
+        name: item.name,
+        sku: item.sku,
+        quantity: Number(writeOffQuantities[item.id]),
+        pricePerUnit: item.pricePerUnit,
+      })),
+      status: "pending",
+    };
+  
+    dispatch(addWriteOffRequest(newRequest));
+  
+    alert("Заявка на списание отправлена на согласование!");
     selectedItems.forEach((item) => {
       const qty = Number(writeOffQuantities[item.id]);
-      const totalLoss = qty * item.pricePerUnit;
-
+      const total = qty * item.pricePerUnit;
+    
       dispatch(
         addOperation({
-          id: Date.now() + Math.random(), // немного изменим, чтобы избежать одинаковых ID
+          id: Date.now() + Math.random(),
           timestamp: new Date().toLocaleString(),
           action: "Списание товара",
           user: user,
           item: item.name,
           quantity: qty,
           price: item.pricePerUnit,
-          total: totalLoss,
+          total: total,
         })
       );
     });
-
-    alert("Списание подтверждено!");
-
-    // Очищаем форму
-    setSelectedItems([]);
-    setWriteOffQuantities({});
-    setQuery("");
-    setFilteredGoods([]);
+    
   };
 
   return (
@@ -193,7 +201,7 @@ const WriteOffPanel = () => {
         <Text minW="150px" m={{ r: "0.5rem" }}>{item.name}</Text>
         <Text minW="90px" m={{ r: "0.5rem" }}>Артикул: {item.sku}</Text>
         <Text minW="100px" m={{ r: "0.5rem" }}>Срок: {item.expiryDate}</Text>
-        <Text minW="80px" m={{ r: "0.5rem" }}>Цена: {item.pricePerUnit} тг</Text>
+        <Text minW="80px" m={{ r: "0.5rem" }}>Цена: {item.pricePerUnit} сом</Text>
         
         <Div d="flex" align="center" m={{ r: "0.5rem" }}>
           <Input
@@ -211,7 +219,7 @@ const WriteOffPanel = () => {
         </Div>
 
         <Text minW="100px" fontWeight="600">
-          Сумма: {total} тг
+          Сумма: {total} сом
         </Text>
       </Div>
     );

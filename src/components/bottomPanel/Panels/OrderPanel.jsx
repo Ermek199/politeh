@@ -143,7 +143,7 @@ const OrderPanel = () => {
             <b>Срок годн.:</b> {selectedProduct.expiryDate}
           </Text>
           <Text m={{ r: "1rem" }}>
-            <b>Цена:</b> {selectedProduct.pricePerUnit} ₸
+            <b>Цена:</b> {selectedProduct.pricePerUnit} сом
           </Text>
           <Text m={{ r: "1rem" }}>
             <b>Ожидается:</b> {selectedProduct.expected}
@@ -164,7 +164,7 @@ const OrderPanel = () => {
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
             placeholder="Количество"
-            disabled
+
           />{" "}
           {orderStatus[selectedProduct.sku] && (
             <span style={{ color: "green", fontWeight: "bold" }}>✓</span>
